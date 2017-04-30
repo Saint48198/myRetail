@@ -13,12 +13,15 @@ export class ProductService {
 
     public getProduct(): Promise<Product[]> {
         return this.http.get(this.url)
-            .toPromise()
-            .then((resp)  => resp.json() as Product[])
-            .catch(this.handleError);
-    }
+            .map((resp) => {
+                if (resp.json) {
+                    resp = resp.json();
 
-    private handleError (error: any): Promise<any> {
-        return Promise.reject(error.message || error);
+                    return resp['CatalogEntryView'] ? resp['CatalogEntryView'] : {};
+                } else {
+                    return {};
+                }
+            })
+            .toPromise();
     }
 }
