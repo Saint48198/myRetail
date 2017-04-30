@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import 'rxjs/Rx'; // used for providing the toPromise function
+import 'rxjs/Rx'; // used for providing the map function for Observables
 
 import { Product } from '../_interfaces';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ProductService {
@@ -11,7 +12,7 @@ export class ProductService {
     constructor(private http: Http) {
     }
 
-    public getProduct(): Promise<Product[]> {
+    public getProduct(): Observable<Product[]> {
         return this.http.get(this.url)
             .map((resp) => {
                 if (resp.json) {
@@ -21,7 +22,6 @@ export class ProductService {
                 } else {
                     return {};
                 }
-            })
-            .toPromise();
+            });
     }
 }

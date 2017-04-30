@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 import { Product } from '../_interfaces';
 import { ProductService } from '../_services';
@@ -11,27 +11,21 @@ import { ProductService } from '../_services';
 })
 export class ProductComponent implements OnInit {
 
-    private product: Product;
+    public product: Product = new Product();
 
     constructor(
-        public route: ActivatedRoute,
+        private _route: ActivatedRoute,
         private _productSvc: ProductService
     ) {}
 
     public ngOnInit() {
-        this.route
-            .data
-            .subscribe((data: any) => {
-                this._productSvc.getProduct().then((resp: Product[]) => {
-                    if (resp.length === 1) {
-                        this.product = resp[0];
-                    }
-
-                    console.log(this.product);
-                }).catch((error: any) => {
-                    console.log(error);
-                });
-            });
+        this._route.params.switchMap((params: Params) => {
+            return this._productSvc.getProduct();
+        }).subscribe((resp: Product[]) => {
+            if (resp.length === 1) {
+                this.product = resp[0];
+            }
+        });
     }
 
 }

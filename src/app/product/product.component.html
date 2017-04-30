@@ -1,1 +1,68 @@
-<h1>Product</h1>
+<div class="container-product">
+	<div>
+		<h1 [innerHTML]="product.title"></h1>
+	</div>
+	<div>
+		<form novalidate>
+			<div *ngFor="let offer of product.Offers">
+				<div *ngFor="let offerPrice of offer.OfferPrice">
+					<span>{{offerPrice.formattedPriceValue}} <small>{{offerPrice.priceQualifier}}</small></span>
+				</div>
+			</div>
+			<hr>
+			<ul>
+				<li *ngFor="let promotion of product.Promotions">
+					<div *ngFor="let desc of promotion.Description" [innerHTML]="desc.shortDescription"></div>
+				</li>
+			</ul>
+			<hr>
+
+			<fieldset>
+				<div>
+					<label for="quality">quality</label>
+					<button type="button" aria-label="decrease quality"><span>-</span></button>
+					<input type="number" name="quality" id="quality" value="">
+					<button type="button" aria-label="increase quality"><span>+</span></button>
+				</div>
+			</fieldset>
+
+			<ul class="list-purchaseActions">
+				<li *ngIf="product.purchasingChannelCode === '0' || product.purchasingChannelCode === '2'">
+					<button type="button" class="btn btn-secondary">pick up in store</button>
+					<span>find in a store</span>
+				</li>
+				<li *ngIf="product.purchasingChannelCode === '0' || product.purchasingChannelCode === '1'">
+					<button type="submit" class="btn btn-primary">add to cart</button>
+				</li>
+			</ul>
+		</form>
+
+		<dl class="list-returnDetails">
+			<dt>returns</dt>
+			<dd>
+				<p *ngFor="let policy of product.ReturnPolicy" [innerHTML]="policy.legalCopy"></p>
+			</dd>
+		</dl>
+
+		<ul class="list-secondaryActions">
+			<li>
+				<button type="button" class="btn" name="addToRegistry">add to registry</button>
+			</li>
+			<li>
+				<button type="button" class="btn" name="addToList">add to list</button>
+			</li>
+			<li>
+				<button type="button" class="btn" name="share">share</button>
+			</li>
+		</ul>
+
+		<section class="container-productDetails">
+			<h2>product highlights</h2>
+			<div *ngFor="let desc of product.ItemDescription">
+				<ul *ngIf="desc.features">
+					<li *ngFor="let feature of desc.features" [innerHTML]="feature"></li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</div>
