@@ -26,14 +26,15 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { ProductComponent } from './product';
 import { NoContentComponent } from './no-content';
+import { ProductService } from './_services';
 
 import '../styles/styles.scss';
-import '../styles/headings.css';
 
 // Application wide providers
 const APP_PROVIDERS = [
     ...APP_RESOLVER_PROVIDERS,
-    AppState
+    AppState,
+    ProductService
 ];
 
 type StoreType = {
