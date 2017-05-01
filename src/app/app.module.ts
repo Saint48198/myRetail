@@ -26,6 +26,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { ProductComponent } from './product';
 import { NoContentComponent } from './no-content';
+import { ImageViewerComponent } from './_shared';
 import { ProductService } from './_services';
 
 import '../styles/styles.scss';
@@ -51,7 +52,8 @@ type StoreType = {
     declarations: [
         AppComponent,
         ProductComponent,
-        NoContentComponent
+        NoContentComponent,
+        ImageViewerComponent
     ],
     imports: [ // import Angular's modules
         BrowserModule,

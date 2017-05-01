@@ -1,0 +1,14 @@
+
+<figure>
+	<img [src]="_currentImage.image" alt="">
+</figure>
+
+<div class="container-images">
+	<div>
+		<ul>
+			<li *ngFor="let image of _images">
+				<img [src]="image.image" alt="">
+			</li>
+		</ul>
+	</div>
+</div>

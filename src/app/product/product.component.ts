@@ -12,6 +12,7 @@ import { ProductService } from '../_services';
 export class ProductComponent implements OnInit {
 
     public product: Product = new Product();
+    public images: Object[] = [];
 
     constructor(
         private _route: ActivatedRoute,
@@ -24,6 +25,8 @@ export class ProductComponent implements OnInit {
         }).subscribe((resp: Product[]) => {
             if (resp.length === 1) {
                 this.product = resp[0];
+
+                this.images = this.product.Images[0]['PrimaryImage'].concat(this.product.Images[0]['AlternateImages']);
             }
         });
     }
