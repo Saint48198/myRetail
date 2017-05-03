@@ -12,13 +12,19 @@
 				pro
 				<small>most helpful 4-5 star reviews</small>
 			</h5>
-			<article>
-				<span class="star-rating"></span>
-				<div class="review-title"></div>
-				<p class="review-text"></p>
+			<article *ngFor="let review of proReviews">
+				<div class="star-rating" [attr.aria-label]="'product rating of ' + review.overallRating + ' star(s)'" [ngClass]="'rating' + review.overallRating">
+					<span [innerHTML]="'&#9734;'"></span>
+					<span [innerHTML]="'&#9734;'"></span>
+					<span [innerHTML]="'&#9734;'"></span>
+					<span [innerHTML]="'&#9734;'"></span>
+					<span [innerHTML]="'&#9734;'"></span>
+				</div>
+				<div class="review-title">{{ review.title }}</div>
+				<p class="review-text">{{ review.review }}</p>
 				<p>
-					<a [routerLink]="'user'"></a>
-					<time pubdate="pubdate"></time>
+					<a [routerLink]="'user'">{{ review.screenName }}</a>
+					<time pubdate="pubdate">{{ review.datePosted }}</time>
 				</p>
 			</article>
 		</div>
@@ -27,13 +33,19 @@
 				con
 				<small>most helpful 1-2 star reviews</small>
 			</h5>
-			<article>
-				<span class="star-rating"></span>
-				<div class="review-title"></div>
-				<p class="review-text"></p>
+			<article *ngFor="let review of conReviews">
+				<div class="star-rating" [attr.aria-label]="'product rating of ' + review.overallRating + ' star(s)'" [ngClass]="'rating' + review.overallRating">
+					<span [innerHTML]="'&#9734;'"></span>
+					<span [innerHTML]="'&#9734;'"></span>
+					<span [innerHTML]="'&#9734;'"></span>
+					<span [innerHTML]="'&#9734;'"></span>
+					<span [innerHTML]="'&#9734;'"></span>
+				</div>
+				<div class="review-title">{{ review.title }}</div>
+				<p class="review-text">{{ review.review }}</p>
 				<p>
-					<a [routerLink]="'user'"></a>
-					<time pubdate="pubdate"></time>
+					<a [routerLink]="'user'">{{ review.screenName }}</a>
+					<time pubdate="pubdate">{{ review.datePosted }}</time>
 				</p>
 			</article>
 		</div>
