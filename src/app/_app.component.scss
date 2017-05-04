@@ -1,0 +1,14 @@
+@import "../styles/variables";
+
+main {
+  width: 470px;
+  margin: 0 auto;
+}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : $large-screen) {
+  main {
+    width: 1000px;
+  }
+}
