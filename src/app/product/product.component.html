@@ -3,7 +3,7 @@
 		<h1 [innerHTML]="product.title"></h1>
 		<image-viewer [images]="images"></image-viewer>
 	</div>
-	<div>
+	<div class="container-productDetails">
 		<form novalidate>
 			<div *ngFor="let offer of product.Offers">
 				<div *ngFor="let offerPrice of offer.OfferPrice">
@@ -66,5 +66,7 @@
 			</div>
 		</section>
 	</div>
-	<reviews [data]="product.CustomerReview"></reviews>
+	<div>
+		<reviews [data]="product.CustomerReview"></reviews>
+	</div>
 </div>

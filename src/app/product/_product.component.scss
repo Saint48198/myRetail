@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+
+.container-product {
+  display: flex;
+  flex-wrap: wrap;
+
+  > div,
+  > div.container-productDetails {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : $large-screen) {
+  .container-product {
+    > div {
+      width: calc(50% - 15px);
+      padding: 0 15px 0 0;
+    }
+
+    > div.container-productDetails {
+      width: calc(50% - 15px);
+      padding: 0 0 0 15px;
+    }
+  }
+}
