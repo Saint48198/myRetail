@@ -48,7 +48,7 @@ hr {
 }
 
 .container-quantity {
-  margin: 28px 0 30px;
+  margin-top: 28px;
 }
 
 .list-purchaseActions {
@@ -95,6 +95,25 @@ hr {
     a {
       font-weight: 600;
     }
+  }
+}
+
+.list-secondaryActions {
+  display: flex;
+
+  > li {
+    width: calc(33% - 3px);
+  }
+
+  > li:nth-child(2) {
+    padding: 0 6px 0;
+  }
+
+  button {
+    width: 100%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 0.75em;
   }
 }
 
