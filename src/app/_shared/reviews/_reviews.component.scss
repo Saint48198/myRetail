@@ -1,57 +1,129 @@
+section > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 0 20px;
+
+  .txt-sub , a {
+    font-size: 0.875em;
+    font-weight: 900;
+    text-decoration: none;
+    color: #000;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.container-reviews {
+  display: flex;
+  background: #f6f5f5;
+  border-radius: 3px;
+  padding: 14px 18px;
+
+  > div {
+    width: 50%;
+  }
+
+  h5 {
+    font: 1.125em/1 "Myriad Pro", "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+    text-transform: uppercase;
+    padding: 0 0 20px;
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 20px;
+    > small {
+      display: block;
+      font: 0.75rem/1 Arial, sans-serif;
+      color: #666;
+      text-transform: none;
+    }
+  }
+  article {
+    .star-rating {
+      font-size: 0.875em;
+      margin: 0 0 10px;
+    }
+
+    p {
+      font-size: 0.75em;
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .review-title {
+      font-size: 1em;
+      font-weight: 900;
+      margin: 0 0 8px;
+    }
+
+    .review-text {
+      line-height: 1.25;
+      margin: 0 0 16px;
+      color: #333;
+    }
+  }
+
+  > div:first-child article .review-text {
+    width: 80%;
+  }
+}
+
 
 .star-rating {
   unicode-bidi: bidi-override;
+  font-size: 1.5em;
+  color: #999;
 
   > span {
     display: inline-block;
     position: relative;
     width: 1.1em;
     height: 16px;
-    position: relative;
   }
 }
 
 .rating1 {
-  > span:nth-child(1):before {
-    position: absolute;
-    content: "\2605";
+  > span:nth-child(1) {
+    color: #c00;
   }
 }
 
 .rating2 {
-  > span:nth-child(1):before,
-  > span:nth-child(2):before {
-    position: absolute;
-    content: "\2605";
+  > span:nth-child(1),
+  > span:nth-child(2) {
+    color: #c00;
   }
 }
 
 .rating3 {
-  > span:nth-child(1):before,
-  > span:nth-child(2):before,
-  > span:nth-child(3):before {
-    position: absolute;
-    content: "\2605";
+  > span:nth-child(1),
+  > span:nth-child(2),
+  > span:nth-child(3) {
+    color: #c00;
   }
 }
 
 .rating4 {
-  > span:nth-child(1):before,
-  > span:nth-child(2):before,
-  > span:nth-child(3):before,
-  > span:nth-child(4):before {
-    position: absolute;
-    content: "\2605";
+  > span:nth-child(1),
+  > span:nth-child(2),
+  > span:nth-child(3),
+  > span:nth-child(4) {
+    color: #c00;
   }
 }
 
 .rating5 {
-  > span:nth-child(1):before,
-  > span:nth-child(2):before,
-  > span:nth-child(3):before,
-  > span:nth-child(4):before,
-  > span:nth-child(5):before {
-    position: absolute;
-    content: "\2605";
+  > span:nth-child(1),
+  > span:nth-child(2),
+  > span:nth-child(3),
+  > span:nth-child(4),
+  > span:nth-child(5) {
+    color: #c00;
   }
 }

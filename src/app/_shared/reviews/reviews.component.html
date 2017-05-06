@@ -1,11 +1,20 @@
 
-<div *ngIf="totalReviews > 0">
-	<div>
-		<span class="star-ratings">{{ reviewData.consolidatedOverallRating }}</span>
-		<span>overall</span>
+<section *ngIf="totalReviews > 0">
+	<header>
+		<div>
+			<span class="star-rating" [attr.aria-label]="'Overall rating of' + reviewData.consolidatedOverallRating + ' stars'" [ngClass]="'rating' + reviewData.consolidatedOverallRating">
+				<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+				<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+				<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+				<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+				<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+			</span>
+			<span aria-hidden="true" class="txt-sub">overall</span>
+		</div>
+
 
 		<a [routerLink]="'reviews'">view all {{ totalReviews }} reviews</a>
-	</div>
+	</header>
 	<div class="container-reviews">
 		<div>
 			<h5>
@@ -14,11 +23,11 @@
 			</h5>
 			<article *ngFor="let review of proReviews">
 				<div class="star-rating" [attr.aria-label]="'product rating of ' + review.overallRating + ' star(s)'" [ngClass]="'rating' + review.overallRating">
-					<span [innerHTML]="'&#9734;'"></span>
-					<span [innerHTML]="'&#9734;'"></span>
-					<span [innerHTML]="'&#9734;'"></span>
-					<span [innerHTML]="'&#9734;'"></span>
-					<span [innerHTML]="'&#9734;'"></span>
+					<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+					<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+					<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+					<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+					<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
 				</div>
 				<div class="review-title">{{ review.title }}</div>
 				<p class="review-text">{{ review.review }}</p>
@@ -35,11 +44,11 @@
 			</h5>
 			<article *ngFor="let review of conReviews">
 				<div class="star-rating" [attr.aria-label]="'product rating of ' + review.overallRating + ' star(s)'" [ngClass]="'rating' + review.overallRating">
-					<span [innerHTML]="'&#9734;'"></span>
-					<span [innerHTML]="'&#9734;'"></span>
-					<span [innerHTML]="'&#9734;'"></span>
-					<span [innerHTML]="'&#9734;'"></span>
-					<span [innerHTML]="'&#9734;'"></span>
+					<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+					<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+					<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+					<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
+					<span [innerHTML]="'&#9733;'" aria-hidden="true"></span>
 				</div>
 				<div class="review-title">{{ review.title }}</div>
 				<p class="review-text">{{ review.review }}</p>
@@ -50,4 +59,4 @@
 			</article>
 		</div>
 	</div>
-</div>
+</section>
