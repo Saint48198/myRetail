@@ -26,7 +26,7 @@
 			<ul class="list-purchaseActions">
 				<li *ngIf="product.purchasingChannelCode === '0' || product.purchasingChannelCode === '2'">
 					<button type="button" class="btn btn-secondary">pick up in store</button>
-					<span>find in a store</span>
+					<div class="txt-sub">find in a store</div>
 				</li>
 				<li *ngIf="product.purchasingChannelCode === '0' || product.purchasingChannelCode === '1'">
 					<button type="submit" class="btn btn-primary">add to cart</button>
@@ -37,7 +37,7 @@
 		<dl class="list-returnDetails">
 			<dt>returns</dt>
 			<dd>
-				<p *ngFor="let policy of product.ReturnPolicy" [innerHTML]="policy.legalCopy"></p>
+				<p [innerHTML]="returnMessage"></p>
 			</dd>
 		</dl>
 

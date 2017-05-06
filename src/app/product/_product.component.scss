@@ -44,7 +44,32 @@ hr {
 }
 
 .container-quantity {
-  padding: 28px 0 30px;
+  margin: 28px 0 30px;
+}
+
+.list-purchaseActions {
+  display: flex;
+  margin: 0 0 30px;
+
+  > li {
+    width: calc(50% - 5px);
+    padding: 0 0 0 5px;
+    text-align: center;
+  }
+
+  > li:first-child {
+    padding: 0 5px 0 0;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .txt-sub {
+    font-size: 0.75em;
+    font-weight: 900;
+    margin: 4px 0 0;
+  }
 }
 
 /* Large Devices, Wide Screens */
