@@ -6,12 +6,13 @@
 	<div class="container-productDetails">
 		<form novalidate>
 			<div *ngFor="let offer of product.Offers">
-				<div *ngFor="let offerPrice of offer.OfferPrice">
+				<div *ngFor="let offerPrice of offer.OfferPrice" class="container-price">
+					<input type="hidden" [value]="offerPrice.priceValue" name="price">
 					<span>{{offerPrice.formattedPriceValue}} <small>{{offerPrice.priceQualifier}}</small></span>
 				</div>
 			</div>
 			<hr>
-			<ul>
+			<ul class="list-promotions">
 				<li *ngFor="let promotion of product.Promotions">
 					<div *ngFor="let desc of promotion.Description" [innerHTML]="desc.shortDescription"></div>
 				</li>
