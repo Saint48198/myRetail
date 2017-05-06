@@ -43,6 +43,10 @@ hr {
   }
 }
 
+.container-quantity {
+  padding: 28px 0 30px;
+}
+
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : $large-screen) {
   .container-product {

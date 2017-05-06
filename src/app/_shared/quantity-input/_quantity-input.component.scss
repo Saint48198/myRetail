@@ -1,0 +1,43 @@
+
+fieldset > div {
+  border: 1px solid #d3d2d2;
+  width: 240px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  padding: 0 10px;
+}
+
+input[type=text] {
+  width: 24px;
+  border: none;
+  font-size: 18px; // used px instead em due to issues with ems inside input
+  padding: 0;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+  flex-grow: 0;
+}
+
+label {
+  font-size: 0.875em;
+  flex-grow: 1;
+  &:after {
+    content: ':';
+  }
+}
+
+button {
+  border: none;
+  background: none;
+  font-size: 1.875em;
+  line-height: 1;
+  color: #ccc;
+  padding: 0;
+
+  &:hover, &:active {
+    color: #f00;
+  }
+}

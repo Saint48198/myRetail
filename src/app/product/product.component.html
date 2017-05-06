@@ -19,14 +19,9 @@
 			</ul>
 			<hr>
 
-			<fieldset>
-				<div>
-					<label for="quality">quality</label>
-					<button type="button" aria-label="decrease quality"><span>-</span></button>
-					<input type="number" name="quality" id="quality" value="">
-					<button type="button" aria-label="increase quality"><span>+</span></button>
-				</div>
-			</fieldset>
+			<div class="container-quantity">
+				<quantity-input></quantity-input>
+			</div>
 
 			<ul class="list-purchaseActions">
 				<li *ngIf="product.purchasingChannelCode === '0' || product.purchasingChannelCode === '2'">
