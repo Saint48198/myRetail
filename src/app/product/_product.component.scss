@@ -43,13 +43,16 @@ hr {
   }
 }
 
+.page-section {
+  margin-bottom: 30px;
+}
+
 .container-quantity {
   margin: 28px 0 30px;
 }
 
 .list-purchaseActions {
   display: flex;
-  margin: 0 0 30px;
 
   > li {
     width: calc(50% - 5px);
@@ -69,6 +72,29 @@ hr {
     font-size: 0.75em;
     font-weight: 900;
     margin: 4px 0 0;
+  }
+}
+
+.list-returnDetails {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  color: #666;
+
+  dt {
+    font-size: 1.25em;
+    line-height: 1;
+    padding: 0 14px 0 0;
+    border-right: 1px solid #ccc;
+    margin: 0 14px 0 0 ;
+  }
+
+  p {
+    font-size: 0.625em;
+
+    a {
+      font-weight: 600;
+    }
   }
 }
 

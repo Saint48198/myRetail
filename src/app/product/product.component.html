@@ -19,11 +19,11 @@
 			</ul>
 			<hr>
 
-			<div class="container-quantity">
+			<div class="container-quantity page-section">
 				<quantity-input></quantity-input>
 			</div>
 
-			<ul class="list-purchaseActions">
+			<ul class="list-purchaseActions page-section">
 				<li *ngIf="product.purchasingChannelCode === '0' || product.purchasingChannelCode === '2'">
 					<button type="button" class="btn btn-secondary">pick up in store</button>
 					<div class="txt-sub">find in a store</div>
@@ -34,12 +34,15 @@
 			</ul>
 		</form>
 
-		<dl class="list-returnDetails">
-			<dt>returns</dt>
-			<dd>
-				<p [innerHTML]="returnMessage"></p>
-			</dd>
-		</dl>
+		<div class="page-section">
+			<dl class="list-returnDetails">
+				<dt>returns</dt>
+				<dd>
+					<p [innerHTML]="returnMessage"></p>
+				</dd>
+			</dl>
+		</div>
+
 
 		<ul class="list-secondaryActions">
 			<li>
