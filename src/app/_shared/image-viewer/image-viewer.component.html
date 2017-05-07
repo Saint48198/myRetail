@@ -1,13 +1,13 @@
 
 <figure>
-	<img [src]="_currentImage.image" alt="">
+	<img [src]="currentImage.image" alt="">
 </figure>
 
 <div class="container-images">
 	<div>
 		<ul>
-			<li *ngFor="let image of _images">
-				<img [src]="image.image" alt="">
+			<li *ngFor="let item of imageCollection">
+				<img [src]="item.image" alt="">
 			</li>
 		</ul>
 	</div>

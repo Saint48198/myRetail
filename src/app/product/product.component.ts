@@ -15,7 +15,6 @@ export class ProductComponent implements OnInit {
     public images: Object[] = [];
     public returnMessage: string = '';
 
-
     constructor(
         private _route: ActivatedRoute,
         private _productSvc: ProductService

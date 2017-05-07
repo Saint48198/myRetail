@@ -6,5 +6,5 @@ import { Component, Input, OnInit } from '@angular/core';
     templateUrl: './quantity-input.component.html'
 })
 export class QuantityInputComponent {
-    currentQuantity: number = 1;
+    public currentQuantity: number = 1;
 }

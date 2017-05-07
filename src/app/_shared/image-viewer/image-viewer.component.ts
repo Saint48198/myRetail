@@ -6,13 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
     templateUrl: './image-viewer.component.html'
 })
 export class ImageViewerComponent {
-    private _currentImage: Object = {};
-    private _images: Object[] = [];
+    public currentImage: Object = {};
+    public imageCollection: Object[] = [];
 
     @Input() set images (images: Object[]) {
 
-        this._images = images || [];
-        this._currentImage = images.length ? images[0] : {};
+        this.imageCollection = images || [];
+        this.currentImage = this.imageCollection.length ? this.imageCollection[0] : {};
     };
 
 }

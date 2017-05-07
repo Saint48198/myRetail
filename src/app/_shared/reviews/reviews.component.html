@@ -33,7 +33,7 @@
 				<p class="review-text">{{ review.review }}</p>
 				<p>
 					<a [routerLink]="'user'">{{ review.screenName }}</a>
-					<time pubdate="pubdate">{{ review.datePosted }}</time>
+					<time pubdate="pubdate">{{ review.datePosted | displayDate }}</time>
 				</p>
 			</article>
 		</div>
@@ -54,7 +54,7 @@
 				<p class="review-text">{{ review.review }}</p>
 				<p>
 					<a [routerLink]="'user'">{{ review.screenName }}</a>
-					<time pubdate="pubdate">{{ review.datePosted }}</time>
+					<time pubdate="pubdate">{{ review.datePosted | displayDate }}</time>
 				</p>
 			</article>
 		</div>

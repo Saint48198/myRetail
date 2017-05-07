@@ -28,6 +28,7 @@ import { ProductComponent } from './product';
 import { NoContentComponent } from './no-content';
 import { ImageViewerComponent, ReviewsComponent, QuantityInputComponent } from './_shared';
 import { ProductService } from './_services';
+import { DisplayDatePipe } from './_lib';
 
 import '../styles/styles.scss';
 
@@ -55,7 +56,8 @@ type StoreType = {
         NoContentComponent,
         ImageViewerComponent,
         ReviewsComponent,
-        QuantityInputComponent
+        QuantityInputComponent,
+        DisplayDatePipe
     ],
     imports: [ // import Angular's modules
         BrowserModule,
