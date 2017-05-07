@@ -23,6 +23,7 @@ figure {
 button {
   border: none;
   background: none;
+  padding: 1px;
 }
 
 .container-images {
@@ -39,12 +40,15 @@ button {
     width: 220px;
     overflow: hidden;
     position: relative;
+    z-index: 1;
     margin: 0 auto;
   }
 
   ul {
     display: flex;
     width: 100%;
+    position: relative;
+
 
     > li {
       margin: 0 0 0 10px;
@@ -66,11 +70,28 @@ button {
     font-weight: 300;
     position: absolute;
     top: 30px;
-    margin-top: -10px;
+    margin-top: -18px;
+    padding: 8px 12px;
+    z-index: 1000;
+    border-radius: 3px;
+
+    &:hover, &:active {
+      background: #757575;
+      color: #fff;
+    }
   }
 
   button.btn-action.next {
     right: 0;
+  }
+
+  button.btn-action[disabled] {
+    background: transparent;
+    color: #ccc;
+    &:hover, &:active {
+      background: transparent;
+      color: #ccc;
+    }
   }
 }
 

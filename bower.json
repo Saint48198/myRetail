@@ -21,6 +21,6 @@
     "tests"
   ],
   "dependencies": {
-    "angular-slick": "^0.2.1"
+    "velocity": "^1.5.0"
   }
 }

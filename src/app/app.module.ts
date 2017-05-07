@@ -20,6 +20,7 @@ import {
  */
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
+
 // App is our top level component
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
@@ -29,6 +30,8 @@ import { NoContentComponent } from './no-content';
 import { ImageViewerComponent, ReviewsComponent, QuantityInputComponent } from './_shared';
 import { ProductService } from './_services';
 import { DisplayDatePipe } from './_lib';
+
+import '../../bower_components/velocity/velocity.js';
 
 import '../styles/styles.scss';
 
