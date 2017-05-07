@@ -11,6 +11,7 @@ import { ProductService } from '../_services';
 })
 export class ProductComponent implements OnInit {
 
+    public title: string = 'Product page';
     public product: Product = new Product();
     public images: Object[] = [];
     public returnMessage: string = '';

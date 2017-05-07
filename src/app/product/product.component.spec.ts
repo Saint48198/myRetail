@@ -1,35 +1,45 @@
 import { ActivatedRoute, Data } from '@angular/router';
 import { Component } from '@angular/core';
-import { inject, TestBed } from '@angular/core/testing';
+import { inject, TestBed, ComponentFixture } from '@angular/core/testing';
 
 // Load the implementations that should be tested
-import { AboutComponent } from './about.component';
+import { ProductComponent } from './product.component';
 
-describe('About', () => {
-  // provide our implementations or mocks to the dependency injector
-  beforeEach(() => TestBed.configureTestingModule({
-    providers: [
-      // provide a better mock
-      {
-        provide: ActivatedRoute,
-        useValue: {
-          data: {
-            subscribe: (fn: (value: Data) => void) => fn({
-              yourData: 'yolo'
-            })
-          }
-        }
-      },
-      AboutComponent
-    ]
-  }));
+describe('Product', () => {
+    let comp: ProductComponent;
+    let fixture: ComponentFixture<ProductComponent>;
 
-  it('should log ngOnInit', inject([AboutComponent], (about: AboutComponent) => {
-    spyOn(console, 'log');
-    expect(console.log).not.toHaveBeenCalled();
+    // provide our implementations or mocks to the dependency injector
+    beforeEach(() => TestBed.configureTestingModule({
+        providers: [
+            // provide a better mock
+            {
+                provide: ActivatedRoute,
+                useValue: {
+                    data: {
+                        subscribe: (fn: (value: Data) => void) => fn({
+                            yourData: 'yolo'
+                        })
+                    }
+                }
+            },
+            ProductComponent
+        ]
+    }));
 
-    about.ngOnInit();
-    expect(console.log).toHaveBeenCalled();
-  }));
+    // synchronous beforeEach
+    beforeEach(() => {
+        fixture = TestBed.createComponent(ProductComponent);
+        comp = fixture.componentInstance;
 
+        fixture.detectChanges(); // trigger initial data binding
+    });
+
+    it('should log ngOnInit', inject([ProductComponent], (product: ProductComponent) => {
+        spyOn(console, 'log');
+        expect(console.log).not.toHaveBeenCalled();
+
+        product.ngOnInit();
+        expect(console.log).toHaveBeenCalled();
+    }));
 });
