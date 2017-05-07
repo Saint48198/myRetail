@@ -9,6 +9,7 @@ figure {
     color: #666;
     position: relative;
     display: none;
+    font-family: "Helvetica Neue Light", Helvetica, Arial, "Lucida Grande", sans-serif;
 
     i {
       font-size: 1.875rem;
@@ -37,7 +38,7 @@ button {
   }
 
   .viewport {
-    width: 220px;
+    width: 208px;
     overflow: hidden;
     position: relative;
     z-index: 1;

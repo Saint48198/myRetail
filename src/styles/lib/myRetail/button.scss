@@ -25,6 +25,7 @@
   background: -webkit-linear-gradient(top, #e26e6e 0%,#cc0000 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #e26e6e 0%,#cc0000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   border-color: #c00;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
   &:hover, &:active {
     background: lighten( #c00, 2% );
@@ -39,6 +40,7 @@
   background: -webkit-linear-gradient(top, #6f6f6f 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #6f6f6f 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   border-color: #000;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
   &:hover, &:active {
     background: lighten( #000, 2% );
