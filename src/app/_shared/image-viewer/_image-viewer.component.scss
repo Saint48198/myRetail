@@ -1,1 +1,82 @@
+@import "../../../styles/variables";
 
+figure {
+  text-align: center;
+  margin: 0 0 14px;
+
+  button {
+    font-size: 0.875em;
+    color: #666;
+    position: relative;
+    display: none;
+
+    i {
+      font-size: 1.875rem;
+      line-height: 1;
+      color: #999;
+      bottom: -6px;
+      position: relative;
+    }
+  }
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+.container-images {
+  width: 320px;
+  position: relative;
+  margin: 0 auto;
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .viewport {
+    width: 220px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  ul {
+    display: flex;
+    width: 100%;
+
+    > li {
+      margin: 0 0 0 10px;
+    }
+
+    > li:first-child {
+      margin-left: 0;
+    }
+  }
+
+  button.active {
+    border: 1px solid #666;
+    border-radius: 3px;
+  }
+
+  button.btn-action {
+    font-size: 1.125em;
+    color: #757575;
+    font-weight: 300;
+    position: absolute;
+    top: 30px;
+    margin-top: -10px;
+  }
+
+  button.btn-action.next {
+    right: 0;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: $large-screen) {
+  figure button {
+    display: inline;
+  }
+}

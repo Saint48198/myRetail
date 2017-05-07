@@ -1,14 +1,19 @@
 
 <figure>
 	<img [src]="currentImage.image" alt="">
+	<button type="button"><i class="icon-zoom-in"></i> view larger</button>
 </figure>
 
 <div class="container-images">
-	<div>
+	<button type="button" class="btn-action prev" aria-label="previous"><i class="icon-angle-left" aria-hidden="true"></i></button>
+	<div class="viewport">
 		<ul>
 			<li *ngFor="let item of imageCollection">
-				<img [src]="item.image" alt="">
+				<button type="button"  (click)="selectImage($event)" [ngClass]="{ 'active': item.active }">
+					<img [src]="item.image" alt="">
+				</button>
 			</li>
 		</ul>
 	</div>
+	<button type="button" class="btn-action next" aria-label="next"><i class="icon-angle-right" aria-hidden="true"></i></button>
 </div>
